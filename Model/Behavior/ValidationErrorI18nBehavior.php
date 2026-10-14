@@ -62,7 +62,7 @@ class ValidationErrorI18nBehavior extends ModelBehavior
     /**
      * Setup
      *
-     * @param Object $model
+     * @param Model $model
      * @param array $config Param: withFieldName (boolean)
      * @return void
      */
@@ -108,7 +108,7 @@ class ValidationErrorI18nBehavior extends ModelBehavior
     {
         $default_error_messages = $this->_getDefaultErrorMessagesI18n();
 
-        if (!empty($add_error_message) && is_array($add_error_message)) {
+        if (!empty($add_error_message)) {
             if ($all_change_flag) {
                 $default_error_messages = $add_error_message;
             } else {

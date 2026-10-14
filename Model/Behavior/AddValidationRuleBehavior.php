@@ -96,7 +96,7 @@ class AddValidationRuleBehavior extends ModelBehavior
      * マルチバイト用バリデーション　文字数上限チェック
      * check max length with Multibyte character.
      *
-     * @param array &$model model object, automatically set
+     * @param Model $model model object, automatically set
      * @param array $wordvalue field value, automatically set
      * @param int $length max length number
      * @return bool
@@ -112,7 +112,7 @@ class AddValidationRuleBehavior extends ModelBehavior
      * マルチバイト用バリデーション　文字数下限チェック
      * check min length with Multibyte character.
      *
-     * @param array &$model model object, automatically set
+     * @param Model $model model object, automatically set
      * @param array $wordvalue field value, automatically set
      * @param int $length min length number
      * @return bool
@@ -127,7 +127,7 @@ class AddValidationRuleBehavior extends ModelBehavior
     /**
      * マルチバイト用のbetweenバリデーション
      *
-     * @param array &$model
+     * @param Model $model
      * @param array $wordvalue
      * @param int $low
      * @param int $high
@@ -156,7 +156,7 @@ class AddValidationRuleBehavior extends ModelBehavior
      *
      * @param Model $model model object, automatically set
      * @param array $wordvalue field value, automatically set
-     * @param string $compare_filed set field name for comparison
+     * @param string $compare_field set field name for comparison
      * @param mixed $auth set true, $compare_filed is encrypted with Security::hash
      * @return bool
      */
@@ -178,7 +178,7 @@ class AddValidationRuleBehavior extends ModelBehavior
      * 全角ダッシュ「ー」のみ必要と考えられるので追加
      * Japanese HIRAGANA Validation
      *
-     * @param array &$model
+     * @param Model $model
      * @param array $wordvalue
      * @return bool
      */
@@ -267,7 +267,7 @@ class AddValidationRuleBehavior extends ModelBehavior
      * 全角、半角スペースのみであればエラーとするバリデーションチェック
      * Japanese Space only validation
      *
-     * @param Model &$model
+     * @param Model $model
      * @param array $wordvalue
      * @return bool
      */
@@ -433,10 +433,10 @@ class AddValidationRuleBehavior extends ModelBehavior
 
         $pattern = '%^(.+) (\d+:\d+[APap][Mm])$|^(.+) (\d+:\d+|\d+:\d+:\d+)$%';
         preg_match($pattern, $value, $match);
-        if (!empty($match[1]) && !empty($match[2])) {
+        if (!empty($match[1])) {
             $date = $match[1];
             $time = $match[2];
-        } elseif (!empty($match[3]) && !empty($match[4])) {
+        } elseif (!empty($match[3])) {
             $date = $match[3];
             $time = $match[4];
         }

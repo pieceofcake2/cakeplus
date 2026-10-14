@@ -24,6 +24,7 @@
  * // in view(ctp file) for using  $data_arr parameter
  * <?php echo $formhidden->hiddenVars($data_arr); ?>
  * ===============
+ * @property FormHelper $Form
  */
 class FormhiddenHelper extends Helper
 {

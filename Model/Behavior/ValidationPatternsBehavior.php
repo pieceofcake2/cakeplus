@@ -64,7 +64,6 @@
 
 class ValidationPatternsBehavior extends ModelBehavior
 {
-    private $model = [];
     public $settings = [];
 
     /**
