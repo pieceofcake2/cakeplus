@@ -1,5 +1,7 @@
 <?php
 
+App::uses('Component', 'Controller');
+
 /**
  * Plugin component : Execute Html Escape and nl2br to Array Data
  *
@@ -20,15 +22,8 @@
  *
  * $this->set('posts', $this->HtmlEscape->nl2br_h($this->paginate( 'Post' ),null, array( 'Post.title') ) );
  */
-class HtmlEscapeComponent extends Object
+class HtmlEscapeComponent extends Component
 {
-    /**
-     * @return void
-     */
-    public function startup(): void
-    {
-    }
-
     /**
      * Execute nl2br() and  h() to Array Data
      *
@@ -71,6 +66,6 @@ class HtmlEscapeComponent extends Object
      */
     protected static function _nl2br_h($value, ?string $charset = null): string
     {
-        return nl2br(h($value, $charset));
+        return nl2br(h($value, $charset ?? true));
     }
 }
