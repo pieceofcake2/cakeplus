@@ -8,9 +8,16 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/pieceofcake2/cakeplus/CI.yml?label=CI)](https://github.com/pieceofcake2/cakeplus/actions/workflows/CI.yml)
 [![Codecov](https://img.shields.io/codecov/c/gh/pieceofcake2/cakeplus?label=Coverage)](https://codecov.io/gh/pieceofcake2/cakeplus)
 
-__This is forked for CakePHP2.__
+Cakeplus provides a component, behaviors and a helper for CakePHP 2 applications, especially
+Japanese ones: HTML escaping of view data, multibyte and Japanese validation rules, translated
+validation messages, reusable validation patterns and hidden form fields. This is a fork of
+[ichikaway/cakeplus](https://github.com/ichikaway/cakeplus) for
+[pieceofcake2/cakephp](https://github.com/pieceofcake2/cakephp).
 
-Cakeplus is cakephp plugin and provides some functions for CakePHP.
+## Requirements
+
+* PHP 8.0+
+* pieceofcake2/cakephp 2.12+
 
 ## Installation
 
@@ -18,38 +25,14 @@ Cakeplus is cakephp plugin and provides some functions for CakePHP.
 composer require pieceofcake2/cakeplus
 ```
 
-## Feature
+## Documentation
 
-We will provide functions as follow.
+See the [documentation](https://pieceofcake2.github.io/cakeplus/).
 
-### Component
+## Contributing
 
-#### HtmlEscape
+See the [contribution guidelines](https://github.com/pieceofcake2/.github/blob/master/CONTRIBUTING.md).
 
-- Execute Html Escape and nl2br to Array Data
-  (Option: you can set no escape list in Array Data)
+## License
 
-### Behavior
-
-#### AddValidationRule
-
-- Check number of Multi byte character.
-- Check difference between 2 fields.
-- Check Japanese Hiragana only input.
-- Check Japanese Katakana only input.
-- Check Japanese Zenkaku only input.
-- Check space and Multibyte space only input.
-
-#### ValidationErrorI18n
-
-- set validation error messages with gettext __()
-
-#### ValidationPatterns
-
-- Summarize multiple validation pattern for writing validation define easily.
-
-### Helper
-
-#### FormScreen
-
-- Auto create hidden tag
+The MIT License. See [LICENSE](LICENSE).

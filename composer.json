@@ -1,6 +1,6 @@
 {
     "name": "pieceofcake2/cakeplus",
-    "description": "Cake plus is cakephp plugin and provides some functions for CakePHP.",
+    "description": "CakePHP 2 plugin with HTML escaping, Japanese validation rules, translated validation messages and hidden form fields",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "cakephp2", "validation"],
     "license": "MIT",
