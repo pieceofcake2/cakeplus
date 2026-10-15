@@ -145,7 +145,7 @@ public $validate = [
 ```
 
 パスワードのフィールドが Auth コンポーネントでハッシュ化される場合は、`compare2fields` の 3 番目の
-パラメーターを `true` にしてください。確認用のフィールドが比較の前に `Security::hash()` でハッシュ化
+パラメータを `true` にしてください。確認用のフィールドが比較の前に `Security::hash()` でハッシュ化
 されます。
 
 ```php
@@ -190,8 +190,8 @@ class AppModel extends Model
 | `email_invalid` | Invalid Email address. |
 | `between` | Between %2$d and %3$d characters. |
 
-メッセージはルールのパラメーターを使って `vsprintf()` で整形されるので、`%2$d` はルールの最初の
-パラメーターになります。その他のメッセージは `__()` に渡されます。
+メッセージはルールのパラメータを使って `vsprintf()` で整形されるので、`%2$d` はルールの最初の
+パラメータになります。その他のメッセージは `__()` に渡されます。
 
 各メッセージの前に翻訳されたフィールド名を付けるには、`withFieldName` オプションを設定します:
 
@@ -215,7 +215,7 @@ class Post extends AppModel
 }
 ```
 
-`setErrorMessageI18n()` の 2 番目のパラメーターは、メッセージをデフォルトとどう組み合わせるかを
+`setErrorMessageI18n()` の 2 番目のパラメータは、メッセージをデフォルトとどう組み合わせるかを
 指定します。`false` ならマージし、`true` ならデフォルトのメッセージをすべて置き換えます。
 
 <a id="validationpatterns-behavior"></a>
