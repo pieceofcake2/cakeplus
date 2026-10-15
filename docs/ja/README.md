@@ -16,7 +16,7 @@ hidden フィールドを扱えます。
 
 ## インストール
 
-[Composer](https://getcomposer.org/) でプラグインをインストールします:
+[Composer](https://getcomposer.org/) でプラグインをインストールします。
 
 ```bash
 composer require pieceofcake2/cakeplus
@@ -24,15 +24,15 @@ composer require pieceofcake2/cakeplus
 
 このプラグインは `cakephp-plugin` タイプなので、`composer/installers` によってプラグインディレクトリに
 インストールされます。正しい場所にインストールされるように、アプリケーションの `composer.json` で
-`installer-paths` を設定してください:
+`installer-paths` を設定してください。
 
 | レイアウト | `installer-paths` |
 | --- | --- |
 | モダン (`config/`, `src/`, `templates/`, `plugins/`) | `"plugins/{$name}/": ["type:cakephp-plugin"]` |
 | レガシー (`app/Config/`, `app/Plugin/`) | `"app/Plugin/{$name}/": ["type:cakephp-plugin"]` |
 
-`config/bootstrap.php` (レガシーレイアウトでは `app/Config/bootstrap.php`) でプラグインをロードします。
-すでに `CakePlugin::loadAll()` を使っている場合は不要です:
+`config/bootstrap.php` (レガシーレイアウトでは `app/Config/bootstrap.php`) でプラグインを読み込みます。
+すでに `CakePlugin::loadAll()` を使っている場合は不要です。
 
 ```php
 CakePlugin::load('Cakeplus');
@@ -66,14 +66,14 @@ class PostsController extends AppController
 ## AddValidationRule ビヘイビア
 
 マルチバイト文字列と日本語の入力のためのバリデーションルールを追加します。ビヘイビアをモデルか
-`AppModel` に追加します:
+`AppModel` に追加します。
 
 ```php
 public $actsAs = ['Cakeplus.AddValidationRule'];
 ```
 
 このビヘイビアは内部エンコーディング (`mb_internal_encoding()`) を UTF-8 に設定します。
-別のエンコーディングを使うには、`encoding` オプションを渡してください:
+別のエンコーディングを使うには、`encoding` オプションを渡してください。
 
 ```php
 public $actsAs = ['Cakeplus.AddValidationRule' => ['encoding' => 'EUC-JP']];
@@ -86,7 +86,7 @@ public $actsAs = ['Cakeplus.AddValidationRule' => ['encoding' => 'EUC-JP']];
 | `maxLengthJP`, `$length` | `$length` 文字以下 (マルチバイト対応) |
 | `minLengthJP`, `$length` | `$length` 文字以上 (マルチバイト対応) |
 | `betweenJP`, `$low`, `$high` | `$low` 文字以上 `$high` 文字以下 (マルチバイト対応) |
-| `compare2fields`, `$field`, `$auth = false` | `$field` と同じ値 (例えば `email` と `email_conf`) |
+| `compare2fields`, `$field`, `$auth = false` | `$field` と同じ値 (たとえば `email` と `email_conf`) |
 | `hiraganaOnly` | 全角ひらがな (と `ー`) のみ |
 | `katakanaOnly` | 全角カタカナ (と `ー`、`゛`、`゜`) のみ |
 | `zenkakuOnly` | 全角文字のみ |
@@ -95,7 +95,7 @@ public $actsAs = ['Cakeplus.AddValidationRule' => ['encoding' => 'EUC-JP']];
 | `telFaxJp` | 日本の電話番号または FAX 番号 (または `+` で始まる国際番号) |
 | `mobileEmailJp` | ローカル部が `a-z`、`0-9`、`.`、`_`、`-` の 3 ～ 30 文字のメールアドレス (日本の携帯キャリアのアドレスを許可します) |
 | `passwordValid`, `$field`, `$min = 5`, `$max = 15` | `$field` が英数字のみで `$min` ～ `$max` 文字 |
-| `datetime`, `$format = 'ymd'`, `$regex = null` | 有効な日時 (例えば `2026-10-14 12:34`) |
+| `datetime`, `$format = 'ymd'`, `$regex = null` | 有効な日時 (たとえば `2026-10-14 12:34`) |
 
 以前のスネークケースの名前 (`hiragana_only`、`katakana_only`、`zenkaku_only`、`space_only`、
 `alpha_number`、`tel_fax_jp`、`mobile_email_jp`、`password_valid`) も、後方互換性のために引き続き
@@ -165,7 +165,7 @@ public $validate = [
 
 バリデーションエラーのメッセージを `__()` で翻訳し、一部のルールのメッセージを共通のメッセージに
 置き換えます。ビヘイビアを `AppModel` に追加し、`beforeValidate()` で
-`replaceValidationErrorMessagesI18n()` を呼び出します:
+`replaceValidationErrorMessagesI18n()` を呼び出します。
 
 ```php
 class AppModel extends Model
@@ -182,7 +182,7 @@ class AppModel extends Model
 ```
 
 メッセージは、バリデーションルールの名前 (`$validate` のキー) で検索されます。デフォルトの
-メッセージは次のとおりです:
+メッセージは次のとおりです。
 
 | ルール名 | メッセージ |
 | --- | --- |
@@ -193,13 +193,13 @@ class AppModel extends Model
 メッセージはルールのパラメータを使って `vsprintf()` で整形されるので、`%2$d` はルールの最初の
 パラメータになります。その他のメッセージは `__()` に渡されます。
 
-各メッセージの前に翻訳されたフィールド名を付けるには、`withFieldName` オプションを設定します:
+各メッセージの前に翻訳されたフィールド名を付けるには、`withFieldName` オプションを設定します。
 
 ```php
 public $actsAs = ['Cakeplus.ValidationErrorI18n' => ['withFieldName' => true]];
 ```
 
-モデルでメッセージを追加したり上書きしたりするには、`setErrorMessageI18n()` を呼び出します:
+モデルでメッセージを追加したり上書きしたりするには、`setErrorMessageI18n()` を呼び出します。
 
 ```php
 class Post extends AppModel
@@ -223,7 +223,7 @@ class Post extends AppModel
 ## ValidationPatterns ビヘイビア
 
 `$validate` で再利用できる、名前付きのバリデーションルールのセットを定義します。ビヘイビアを
-`AppModel` に追加し、`beforeValidate()` で `setValidationPatterns()` を呼び出します:
+`AppModel` に追加し、`beforeValidate()` で `setValidationPatterns()` を呼び出します。
 
 ```php
 class AppModel extends Model
@@ -258,7 +258,7 @@ class AppModel extends Model
 ```
 
 `AppModel` で定義したパターンは、すべてのモデルで使えます。`$validate` では、ルールの代わりに
-パターン名を使います:
+パターン名を使います。
 
 ```php
 public $validate = [
@@ -266,7 +266,7 @@ public $validate = [
 ];
 ```
 
-配列の中でパターンとルールを組み合わせることもできます:
+配列の中でパターンとルールを組み合わせることもできます。
 
 ```php
 public $validate = [
@@ -290,13 +290,13 @@ public $validate = [
 public $helpers = ['Cakeplus.Formhidden'];
 ```
 
-ビューでは次のようにします:
+ビューでは次のようにします。
 
 ```php
 // $this->request->data の hidden フィールド
 echo $this->Formhidden->hiddenVars();
 
-// 配列の hidden フィールド。例えば ['Post' => ['title' => 'Hello']]
+// 配列の hidden フィールド。たとえば ['Post' => ['title' => 'Hello']]
 echo $this->Formhidden->hiddenVars($data);
 ```
 
@@ -304,8 +304,10 @@ echo $this->Formhidden->hiddenVars($data);
 
 ## 由来
 
-このパッケージは、Yasushi Ichikawa 氏が作成した [ichikaway/cakeplus](https://github.com/ichikaway/cakeplus)
-(Packagist では `ichikaway/cakeplus`、アップストリームの最終バージョンは v2.0) をフォークしてメンテナンス
-しているものです。[pieceofcake2](https://github.com/pieceofcake2) が、モダンな PHP で動く CakePHP 2
-向けにメンテナンスしています。オリジナルからの変更点は
-[フォーク以降のコミット履歴](https://github.com/pieceofcake2/cakeplus/compare/a273a8a...2.x) を参照してください。
+このパッケージは [ichikaway/cakeplus](https://github.com/ichikaway/cakeplus)
+(Packagist では `ichikaway/cakeplus`、アップストリームの最終バージョンは v2.0)
+のメンテナンスされたフォークで、元は Yasushi Ichikawa によって作られました。
+[pieceofcake2](https://github.com/pieceofcake2) が、モダンな PHP 上の CakePHP 2 向けにメンテナンスしています。
+オリジナルからの変更点は
+[フォーク以降のコミット履歴](https://github.com/pieceofcake2/cakeplus/compare/a273a8a...2.x)
+にあります。
