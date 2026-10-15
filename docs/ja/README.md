@@ -28,8 +28,8 @@ composer require pieceofcake2/cakeplus
 
 | レイアウト | `installer-paths` |
 | --- | --- |
-| モダン (`config/`, `src/`, `templates/`, `plugins/`) | `"plugins/{$name}/": ["type:cakephp-plugin"]` |
-| レガシー (`app/Config/`, `app/Plugin/`) | `"app/Plugin/{$name}/": ["type:cakephp-plugin"]` |
+| モダン (`config/`、`src/`、`templates/`、`plugins/`) | `"plugins/{$name}/": ["type:cakephp-plugin"]` |
+| レガシー (`app/Config/`、`app/Plugin/`) | `"app/Plugin/{$name}/": ["type:cakephp-plugin"]` |
 
 `config/bootstrap.php` (レガシーレイアウトでは `app/Config/bootstrap.php`) でプラグインを読み込みます。
 すでに `CakePlugin::loadAll()` を使っている場合は不要です。
@@ -83,10 +83,10 @@ public $actsAs = ['Cakeplus.AddValidationRule' => ['encoding' => 'EUC-JP']];
 
 | ルール | 説明 |
 | --- | --- |
-| `maxLengthJP`, `$length` | `$length` 文字以下 (マルチバイト対応) |
-| `minLengthJP`, `$length` | `$length` 文字以上 (マルチバイト対応) |
-| `betweenJP`, `$low`, `$high` | `$low` 文字以上 `$high` 文字以下 (マルチバイト対応) |
-| `compare2fields`, `$field`, `$auth = false` | `$field` と同じ値 (たとえば `email` と `email_conf`) |
+| `maxLengthJP`、`$length` | `$length` 文字以下 (マルチバイト対応) |
+| `minLengthJP`、`$length` | `$length` 文字以上 (マルチバイト対応) |
+| `betweenJP`、`$low`、`$high` | `$low` 文字以上 `$high` 文字以下 (マルチバイト対応) |
+| `compare2fields`、`$field`、`$auth = false` | `$field` と同じ値 (たとえば `email` と `email_conf`) |
 | `hiraganaOnly` | 全角ひらがな (と `ー`) のみ |
 | `katakanaOnly` | 全角カタカナ (と `ー`、`゛`、`゜`) のみ |
 | `zenkakuOnly` | 全角文字のみ |
@@ -94,8 +94,8 @@ public $actsAs = ['Cakeplus.AddValidationRule' => ['encoding' => 'EUC-JP']];
 | `alphaNumber` | `0-9`、`a-z`、`A-Z` のみ |
 | `telFaxJp` | 日本の電話番号または FAX 番号 (または `+` で始まる国際番号) |
 | `mobileEmailJp` | ローカル部が `a-z`、`0-9`、`.`、`_`、`-` の 3 ～ 30 文字のメールアドレス (日本の携帯キャリアのアドレスを許可します) |
-| `passwordValid`, `$field`, `$min = 5`, `$max = 15` | `$field` が英数字のみで `$min` ～ `$max` 文字 |
-| `datetime`, `$format = 'ymd'`, `$regex = null` | 有効な日時 (たとえば `2026-10-14 12:34`) |
+| `passwordValid`、`$field`、`$min = 5`、`$max = 15` | `$field` が英数字のみで `$min` ～ `$max` 文字 |
+| `datetime`、`$format = 'ymd'`、`$regex = null` | 有効な日時 (たとえば `2026-10-14 12:34`) |
 
 以前のスネークケースの名前 (`hiragana_only`、`katakana_only`、`zenkaku_only`、`space_only`、
 `alpha_number`、`tel_fax_jp`、`mobile_email_jp`、`password_valid`) も、後方互換性のために引き続き
