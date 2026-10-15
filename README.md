@@ -36,6 +36,14 @@ composer require pieceofcake2/cakeplus
 
 See the [contribution guidelines](https://github.com/pieceofcake2/.github/blob/master/CONTRIBUTING.md).
 
+## Origin
+
+This package is a maintained fork of [ichikaway/cakeplus](https://github.com/ichikaway/cakeplus)
+(`ichikaway/cakeplus` on Packagist, last upstream version v2.0), originally by Yasushi Ichikawa. It
+is maintained for CakePHP 2 on modern PHP by [pieceofcake2](https://github.com/pieceofcake2).
+Changes from the original are listed in the
+[commit history since the fork](https://github.com/pieceofcake2/cakeplus/compare/a273a8a...2.x).
+
 ## License
 
 The MIT License. See [LICENSE](LICENSE).

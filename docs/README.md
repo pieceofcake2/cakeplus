@@ -288,3 +288,11 @@ echo $this->Formhidden->hiddenVars();
 // Hidden fields for an array, e.g. ['Post' => ['title' => 'Hello']]
 echo $this->Formhidden->hiddenVars($data);
 ```
+
+## Origin
+
+This package is a maintained fork of [ichikaway/cakeplus](https://github.com/ichikaway/cakeplus)
+(`ichikaway/cakeplus` on Packagist, last upstream version v2.0), originally by Yasushi Ichikawa. It
+is maintained for CakePHP 2 on modern PHP by [pieceofcake2](https://github.com/pieceofcake2).
+Changes from the original are listed in the
+[commit history since the fork](https://github.com/pieceofcake2/cakeplus/compare/a273a8a...2.x).
