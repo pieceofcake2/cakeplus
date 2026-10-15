@@ -16,7 +16,7 @@ form fields.
 
 Install the plugin with [Composer](https://getcomposer.org/):
 
-```
+```bash
 composer require pieceofcake2/cakeplus
 ```
 

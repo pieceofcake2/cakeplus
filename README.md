@@ -21,7 +21,7 @@ validation messages, reusable validation patterns and hidden form fields. This i
 
 ## Installation
 
-```
+```bash
 composer require pieceofcake2/cakeplus
 ```
 
