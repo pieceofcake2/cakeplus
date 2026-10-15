@@ -14,6 +14,13 @@ validation messages, reusable validation patterns and hidden form fields. This i
 [ichikaway/cakeplus](https://github.com/ichikaway/cakeplus) for
 [pieceofcake2/cakephp](https://github.com/pieceofcake2/cakephp).
 
+## Documentation
+
+- Website: https://pieceofcake2.github.io/cakeplus/
+- Markdown: [docs/README.md](docs/README.md) (for AI tools and offline reading)
+
+The Markdown documentation is also included in the Composer package, in the plugin's directory: `plugins/Cakeplus/docs/README.md` (the location depends on your `installer-paths`). Install the package with `--dev` if you only need it for development.
+
 ## Requirements
 
 * PHP 8.0+
@@ -24,10 +31,6 @@ validation messages, reusable validation patterns and hidden form fields. This i
 ```bash
 composer require pieceofcake2/cakeplus
 ```
-
-## Documentation
-
-See the [documentation](https://pieceofcake2.github.io/cakeplus/).
 
 ## Contributing
 
