@@ -199,7 +199,7 @@ class Post extends AppModel
     public function beforeValidate($options = []): bool
     {
         $this->setErrorMessageI18n([
-            'invalid_email' => __('Invalid Email !!!.'),
+            'email_invalid' => __('Invalid Email !!!.'),
         ], false);
 
         return parent::beforeValidate($options);
