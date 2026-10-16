@@ -24,7 +24,7 @@
  *  class Post extends AppModel {
  *      function beforeValidate(){
  *          $error_messages = array(
- *              'invalid_email' => __('Invalid Email !!!.',true),
+ *              'email_invalid' => __('Invalid Email !!!.',true),
  *          );
  *
  *          $this->setErrorMessageI18n($error_messages, false);
